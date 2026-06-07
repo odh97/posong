@@ -23,7 +23,9 @@ const eslintConfig = defineConfig([
       'simple-import-sort/imports': 'error', // import 정렬 규칙을 오류로 설정
       'simple-import-sort/exports': 'error', // export 정렬 규칙을 오류로 설정
 
-      'unicorn/no-lonely-if': 'error', // if-else 구문에서 else 없이 if만 사용하는 것을 금지
+      'no-else-return': 'error', // else 블록 없이 return을 사용하도록 권장
+      'max-depth': ['error', 3], // 최대 블록 깊이를 2로 제한하여 코드의 복잡성을 줄임
+
       'unicorn/no-for-loop': 'error', // for 루프 대신 랙(for-of, for-in, forEach 등)을 사용하도록 권장
 
       // const item = arr.filter(x => x.id === id)[0] ❌
