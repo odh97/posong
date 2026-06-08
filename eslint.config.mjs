@@ -63,7 +63,7 @@ const eslintConfig = defineConfig([
       'unicorn/filename-case': 'off', // Next.js에서는 파일명에 대문자도 많이 사용하기 때문에 끄는게 좋음
     },
   },
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'commitlint.config.mjs']),
   prettierConfig,
 ]);
 
