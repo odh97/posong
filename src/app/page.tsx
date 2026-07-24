@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { MainCard } from '@/app/_components/MainCard';
+import { MainCard } from '@/app/_ui/MainCard';
 import { Logger } from '@/common/utils/logger';
 
 export default function Home() {
