@@ -3,9 +3,9 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React, { useMemo } from 'react';
 
-import { childrenType } from '@/common/type/common';
+import { ChildrenType } from '@/common/types/common';
 
-export const QueryProvider = ({ children }: { children: childrenType }) => {
+export const QueryProvider = ({ children }: { children: ChildrenType }) => {
   const queryClient = useMemo(
     () =>
       new QueryClient({
