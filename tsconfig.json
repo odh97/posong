@@ -22,13 +22,17 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/dev/types/**/*.ts", "**/*.mts"],
   "exclude": ["node_modules"]
 }
+
+// strict 옵션을 true로 설정하면 활성화 되는 옵션
+// noImplicitAny                - any 타입이 암묵적으로 추론되는 경우
+// noImplicitThis               -	this가 암묵적으로 any가 되는 경우 오류
+// strictNullChecks             -	null, undefined에 대한 엄격한 검사
+// strictFunctionTypes          -	함수 매개변수 타입의 호환성을 더 엄격하게 검사
+// strictBindCallApply          -	bind, call, apply의 인자를 원본 함수 타입에 맞게 검사
+// strictPropertyInitialization -	클래스 프로퍼티가 생성자에서 초기화됐는지 검사
+// useUnknownInCatchVariables   -	catch문의 오류 변수를 any가 아닌 unknown으로 처리
+// alwaysStrict                 -	생성되는 JavaScript를 ECMAScript strict mode로 처리
+// strictBuiltinIteratorReturn  - 내장 Iterator의 return 타입을 엄격하게 검사

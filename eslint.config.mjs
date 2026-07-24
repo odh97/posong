@@ -56,7 +56,7 @@ const eslintConfig = defineConfig([
       // const value = !!condition ✅
       'unicorn/prefer-ternary': 'error',
 
-      'unicorn/no-null': 'error', // null 대신 undefined 사용을 권장
+      'unicorn/no-null': 'off', // null 대신 undefined 사용을 권장 (미사용❎)
 
       // Next.js에서 끄는게 필수
       'unicorn/prevent-abbreviations': 'off', // react / next.js에서는 관용어로 사용되는 약어들이 많아서 끄는게 좋음

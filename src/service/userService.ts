@@ -3,7 +3,7 @@ import { requestApi } from '@/common/lib/axios';
 import { LoginRequest } from '@/service/userService.type';
 
 // 로그인 API 요청
-export const login = async (data: LoginRequest) => {
+export const fetchPostLogin = async (data: LoginRequest) => {
   return requestApi({
     url: '/api/users/login',
     method: 'POST',
@@ -12,7 +12,7 @@ export const login = async (data: LoginRequest) => {
 };
 
 // User profile API 요청
-export const getUserProfile = async () => {
+export const fetchGetUserProfile = async () => {
   return requestApi({
     url: '/user/profile',
     method: 'GET',
