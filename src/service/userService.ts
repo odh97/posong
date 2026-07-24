@@ -1,6 +1,6 @@
 // userService
-import { LoginRequest } from '@/common/types/service/userService.type';
-import { requestApi } from '@/lib/axios';
+import { requestApi } from '@/common/lib/axios';
+import { LoginRequest } from '@/service/userService.type';
 
 // 로그인 API 요청
 export const login = async (data: LoginRequest) => {

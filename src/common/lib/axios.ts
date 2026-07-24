@@ -14,11 +14,12 @@ export const requestApi = axios.create({
 
 // 요청 인터셉터 설정
 requestApi.interceptors.request.use((config) => {
-  const token = localStorage.getItem('accessToken');
+  // TODO: 토큰 정책에 따라 토큰을 가져와서 헤더에 추가하는 로직을 구현해야 합니다.
+  // const token = localStorage.getItem('accessToken');
 
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
+  // if (token) {
+  //   config.headers.Authorization = `Bearer ${token}`;
+  // }
 
   return config;
 });
