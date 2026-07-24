@@ -12,8 +12,6 @@ const GoogleAnalytics = () => {
   // GTM noscript를 body에 직접 추가
   const userID = '';
   useEffect(() => {
-    let noscriptB2C;
-
     const noscriptB2C = document.createElement('noscript');
     noscriptB2C.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-xxx" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
 
