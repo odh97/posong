@@ -33,6 +33,7 @@ export const useQueryEffects = <TData, TError = Error>(
   // 이전 상태를 추적하기 위한 ref
   const prevStateRef = useRef<PrevStateType<TData, TError>>({ isSuccess: false, isError: false, data: undefined, error: null });
   const prevDataAtRef = useRef(0);
+  const prevDataRef = useRef<TData | undefined>(undefined);
 
   useEffect(() => {
     const prevState = prevStateRef.current;
@@ -66,18 +67,22 @@ export const useQueryEffects = <TData, TError = Error>(
       return;
     }
 
+    const isFirstFetch = prevDataAtRef.current === 0;
+    const isDataChanged = data !== prevDataRef.current;
+
     // 최초 데이터 fetch 시점에 대한 콜백
-    if (isSuccess && onFirstFetch && prevDataAtRef.current === 0) {
+    if (isSuccess && onFirstFetch && isFirstFetch) {
       // console.log('onFirstFetch');
       onFirstFetch(data);
     }
 
     // 데이터 업데이트 시점에 대한 콜백
-    if (isSuccess && onUpdateFetch && prevDataAtRef.current !== 0) {
+    if (isSuccess && onUpdateFetch && !isFirstFetch && isDataChanged) {
       // console.log('onUpdateFetch');
       onUpdateFetch(data);
     }
 
     prevDataAtRef.current = dataUpdatedAt;
+    prevDataRef.current = data;
   }, [isSuccess, dataUpdatedAt, data, onFirstFetch, onUpdateFetch]);
 };
