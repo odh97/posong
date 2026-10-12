@@ -16,6 +16,7 @@ const eslintConfig = defineConfig([
     rules: {
       'no-console': ['warn', { allow: ['warn', 'error'] }], // console.warn과 console.error는 허용, 나머지는 경고로 설정
       eqeqeq: 'error', // 엄격한 동등 비교를 강제하여 예기치 않은 타입 변환을 방지 (== 금지)
+      curly: ['error', 'all'], // 모든 제어문에 중괄호 사용을 강제
 
       '@typescript-eslint/no-explicit-any': 'warn', // any 사용을 경고로 설정
       '@typescript-eslint/no-unused-vars': 'warn', // 사용하지 않는 변수에 대한 경고 설정
